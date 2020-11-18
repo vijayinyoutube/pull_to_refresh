@@ -8,13 +8,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 var refreshKey = GlobalKey<RefreshIndicatorState>();
-int limit;
+int limit=random.nextInt(10);
 Random random = new Random();
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    limit = random.nextInt(10);
     return Scaffold(
       appBar: AppBar(
         title: Text("Pull To Refresh"),
@@ -34,7 +33,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Future<void> refreshList() async {
     refreshKey.currentState?.show(atTop: false);
     await Future.delayed(Duration(seconds: 2));
-    setState(() {});
+    setState(() {
+      limit = random.nextInt(10);
+    });
     return null;
   }
 }
