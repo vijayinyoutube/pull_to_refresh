@@ -8,22 +8,31 @@ class MyHomePage extends StatefulWidget {
 }
 
 var refreshKey = GlobalKey<RefreshIndicatorState>();
-int limit=random.nextInt(10);
 Random random = new Random();
+int limit = random.nextInt(10);
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: Text("Pull To Refresh"),
+        title: Text("Pull to refresh"),
       ),
       body: RefreshIndicator(
         key: refreshKey,
         onRefresh: refreshList,
         child: ListView(
           children: [
-            for (int i = 0; i < limit; i++) Text("Item ${(i)}"),
+            for (int i = 0; i < limit; i++)
+              Card(
+                elevation: 5,
+                child: ListTile(
+                  leading: Icon(Icons.radio_button_checked),
+                  title: Text("Item ${(i)}"),
+                  trailing: Icon(Icons.arrow_forward_ios),
+                ),
+              ),
           ],
         ),
       ),
@@ -36,6 +45,5 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       limit = random.nextInt(10);
     });
-    return null;
   }
 }
