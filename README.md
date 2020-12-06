@@ -19,6 +19,8 @@
 
 To know more awesome content about Flutter., 
 
+Check out the Video Tutorial 👉 : https://youtu.be/kwUe0eSAPzg
+
 Visit my channel 👉 : https://www.youtube.com/channel/UCBC_Z7jla1GSITcqLKAtPxQ
 
 
